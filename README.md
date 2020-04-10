@@ -10,6 +10,7 @@ My config files for my laptop running on Arch Linux.
 | Application launcher | rofi |
 | Terminal emulator | urxvt |
 | CLI interpreter | Zsh |
+| Compositor | [compton-tryone](https://github.com/tryone144/compton) |
 
 List of all installed packages: [pkglist.txt](https://github.com/ShinysArc/dotfiles/blob/master/pkglist.txt).
 
