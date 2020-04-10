@@ -17,7 +17,7 @@ This repository and the dotfiles are managed by [chezmoi](https://github.com/twp
 
 ## Screenshot
 
-![screenshot](https://raw.githubusercontent.com/ShinysArc/dotfiles/master/screenshot.png)
+![screenshot](https://github.com/ShinysArc/dotfiles/blob/master/screenshot.png)
 
 ## Usage
 
