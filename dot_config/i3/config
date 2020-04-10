@@ -1,0 +1,156 @@
+####################################{ GAPS }####################################
+gaps inner 5
+gaps top 0
+gaps right 0
+gaps bottom 0
+gaps left 0
+
+##############################{ LANGUAGE & FONTS }##############################
+exec setxkbmap fr
+font pango:Consolas 11
+
+###############################{ MAIN SHORTCUTS }###############################
+set $mod Mod4
+bindsym $mod+Shift+a kill
+#bindsym $mod+d exec rofi -show drun -theme extra -font "Hack Nerd Font Bold 12"
+#bindsym $mod+d exec rofi -show drun -theme hello
+bindsym $mod+d exec "sh ~/.config/rofi/launchers/launcher.sh"
+bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+x exec "sh ~/.config/i3/powermenu.sh"
+bindsym $mod+p exec maim -o -s ~/Screens/$(date +%s).png
+bindsym $mod+Delete exec "sh ~/.config/i3/i3lock_temp/matrixlock.sh"
+
+################################{ APP SHORTCUTS }###############################
+bindsym $mod+Return exec urxvt
+bindsym $mod+i exec thunar
+bindsym $mod+Shift+Return exec urxvt -name floating
+for_window [instance="floating"] floating enable
+for_window [class="^.*"] border pixel 0
+for_window [class="kitty"] fullscreen enable
+
+###################################{ FOCUS }####################################
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+no_focus [window_role="pop-up"]
+
+####################################{ MOVE }####################################
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+###################################{ SPLIT }###################################
+bindsym $mod+h split h
+bindsym $mod+v split v
+
+#################################{ WORKSPACES }#################################
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+###############################{ VOLUME CONTROL }###############################
+bindsym XF86AudioRaiseVolume exec --no-startup-id sh ~/.config/i3/volume.sh up
+bindsym XF86AudioLowerVolume exec --no-startup-id sh ~/.config/i3/volume.sh down
+bindsym XF86AudioMute exec --no-startup-id sh ~/.config/i3/volume.sh mute
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute \
+@DEFAULT_SOURCE@ toggle
+
+#############################{ BRIGHTNESS CONTROL }#############################
+bindsym XF86MonBrightnessUp exec --no-startup-id sh ~/.config/i3/brightness.sh up
+bindsym XF86MonBrightnessDown exec --no-startup-id sh ~/.config/i3/brightness.sh down
+
+############################{ NOTIFICATION CONTROL }############################
+bindsym $mod+c exec perl ~/.config/i3/notify_pause.pl
+bindsym $mod+b exec perl ~/.config/i3/notify_resume.pl
+
+###################################{ MOUSE }####################################
+focus_follows_mouse yes
+floating_modifier $mod
+exec unclutter --timeout 1 --jitter 10 --ignore-scrolling &
+
+#############################{ SCRIPTS ON STARTUP }#############################
+exec compton --config ~/.config/compton/config --dbus
+exec_always sh ~/.config/polybar/launch.sh
+exec sh ~/Cronscripts/dbus.sh
+exec xinput set-prop 9 319 1
+exec xinput set-prop 9 311 1
+exec xinput set-prop 9 318 1
+exec xinput set-prop 9 310 1
+exec xinput set-prop 10 319 1
+exec xinput set-prop 10 327 1
+exec xinput set-prop 10 310 1
+exec xinput set-prop 10 326 1
+
+#exec dunst
+exec /bin/perl ~/.config/i3/battest.pl
+exec --no-startup-id blueman-applet
+exec --no-startup-id nm-applet
+
+#################################{ SCRATCHPAD }#################################
+bindsym $mod+a scratchpad show
+bindsym $mod+n move scratchpad
+
+###################################{ RESIZE }###################################
+bindsym $mod+r mode "resize"
+mode "resize" {
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym m resize grow width 10 px or 10 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+#################################{ APPEARANCE }#################################
+default_border normal 2
+default_floating_border none
+hide_edge_borders none
+title_align center
+#exec_always feh --bg-scale ~/Downloads/bg.jpg
+exec_always feh --bg-scale ~/Downloads/96.png
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #005682 #005682 #ffffff #005682   #005682
+client.focused_inactive #7C7D7D #7C7D7D #000000 #7C7D7D   #7C7D7D
+client.unfocused        #7C7D7D #7C7D7D #000000 #7C7D7D   #7C7D7D
+client.urgent           #901810 #901810 #ffffff #901810	  #901810
+client.placeholder      #7C7D7D #7C7D7D #000000 #7C7D7D   #7C7D7D
+
+client.background       #ffffff
