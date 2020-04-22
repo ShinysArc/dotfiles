@@ -60,7 +60,7 @@ shadow = true;
 # Don't draw shadows on DND windows.
 no-dnd-shadow = true;
 # Avoid drawing shadows on dock/panel windows.
-no-dock-shadow = false;
+no-dock-shadow = true;
 # Zero the part of the shadow's mask behind the window. Fix some weirdness with ARGB windows.
 clear-shadow = true;
 # The blur radius for shadows. (default 12)
@@ -92,7 +92,6 @@ shadow-exclude = [
     "name *= 'compton'",
     "name *= 'Chromium'",
     "name *= 'Chrome'",
-#    "class_g = 'Polybar'",
     "class_g = 'Conky'",
     "class_g = 'Kupfer'",
     "class_g = 'Synapse'",
@@ -119,34 +118,30 @@ inactive-opacity-override = false;
 alpha-step = 0.06;
 
 opacity-rule = [ 
-	#"99:class_g = 'URxvt'", 
 	"99:class_g = 'Rofi'", 
-	#"80:class_g = 'Code'", 
 	"80:class_g = 'code'", 
 	"80:class_g = 'Mousepad'",
     "0:name = 'i3lock'",
-    #"99:class_g = 'Google-chrome'",
     "99:class_g = 'obs'",
-    #"99:class_g = 'discord'",
     "99:class_g = 'vlc'",
-    #"99:class_g = 'Spotify'",
-    "80:class_g = 'kitty'"
+    "80:class_g = 'kitty'",
 ]
 
 # Dim inactive windows. (0.0 - 1.0)
-inactive-dim = 0.1;
+inactive-dim = 0.3;
 # Do not let dimness adjust based on window opacity.
 # inactive-dim-fixed = true;
 # Blur background of transparent windows. Bad performance with X Render backend. GLX backend is preferred.
+blur-kern = "3x3box";
 blur-background = true;
 blur-method = "kawase";
-blur-strength = 10;
+blur-strength = 8;
 # Blur background of opaque windows with transparent frames as well.
 blur-background-frame = true;
 # Do not let blur radius adjust based on window opacity.
 # blur-background-fixed = false;
 blur-background-exclude = [
-   "window_type = 'dock'",
+   #"window_type = 'dock'",
    "window_type = 'desktop'",
 ];
 

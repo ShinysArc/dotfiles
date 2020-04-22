@@ -16,9 +16,11 @@ List of all installed packages: [pkglist.txt](https://github.com/ShinysArc/dotfi
 
 This repository and the dotfiles are managed by [chezmoi](https://github.com/twpayne/chezmoi).
 
-## Screenshot
+## Screenshots
 
-![screenshot](https://github.com/ShinysArc/dotfiles/blob/master/screenshot.png)
+![screenshot0](https://github.com/ShinysArc/dotfiles/blob/master/screenshot0.png)
+![screenshot1](https://github.com/ShinysArc/dotfiles/blob/master/screenshot1.png)
+![screenshot2](https://github.com/ShinysArc/dotfiles/blob/master/screenshot2.png)
 
 ## Usage
 
@@ -27,11 +29,3 @@ This repository and the dotfiles are managed by [chezmoi](https://github.com/twp
 - Apply changes: `chezmoi apply`
 - Go to the repository: `chezmoi cd`
 - Pull and apply remote changes: `chezmoi update`
-
-## Notes
-
-### Enable touchpad while typing
-
-1. Get touchpad id with: `xinput --list`
-2. Get properties of the touchpad: `xinput --list-props <touchpadid>`
-3. Enable the feature with: `xinput --set-prop <touchpadid> <propid> <value>`

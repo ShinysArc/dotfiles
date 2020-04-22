@@ -3,7 +3,6 @@
 # You can call this script like this:
 # $./brightness.sh up
 # $./brightness.sh down
-# $./brightness.sh mute
 
 function get_brightness {
     xbacklight -get
@@ -11,9 +10,9 @@ function get_brightness {
 
 function send_notification {
     brightness=`get_brightness`
-    bar=$(seq -s "─" $(($brightness / 5)) | sed 's/[0-9]//g')
-    # Send the notification
-    dunstify -t 5000 -r 2593 -u normal "$bar"
+    NOTI_ID=$(notify-send.py/notify_send_py/notify_send_py.py "Brightness" "$brightness%" \
+                         --hint string:image-path:video-display boolean:transient:true \
+                         --replaces-process "brightness-popup")
 }
 
 case $1 in

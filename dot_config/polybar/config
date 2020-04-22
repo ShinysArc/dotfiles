@@ -1,5 +1,5 @@
 [colors]
-background = "#aa1d1f21"
+background = "#601d1f21"
 foreground = "${xrdb:foreground}"
 primary = "${xrdb:color4}"
 alert = "ff0000"
@@ -40,12 +40,14 @@ margin-top = 5
 padding-right = 2
 padding-left = 2
 width = 100%
-height = 22
+height = 24
 spacing = 1
+enable-ipc = true
 
-font-0 = Iosevka:style=bold:size=9
-font-1 = "Iosevka Nerd Font:antialias=true:size=10"
-font-2 = Nanum:style=bold:size=9
+font-0 = Iosevka:style=bold:size=10
+font-1 = "Iosevka Nerd Font:antialias=true:size=11"
+font-2 = Nanum:style=bold:size=10
+font-3 = Font Awesome 5 Free:size=11;1
 dpi-x = 0
 dpi-y = 0
 
@@ -53,8 +55,9 @@ bottom = true
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-modules-right = spotify
-modules-left = memory xkeyboard
+modules-center = spotify previous playpause next
+modules-left = memory
+modules-right = xkeyboard
 
 [module/i3]
 type = internal/i3
@@ -94,7 +97,7 @@ format-disconnected-foreground = ${colors.alert}
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-prefix = "               "
+format-prefix = " "
 
 label-layout = %layout%
 label-indicator-padding = 2
@@ -196,13 +199,45 @@ interval = 2
 format = <label>
 label = " %gb_used% / %gb_total%"
 
+[module/previous]
+type = custom/ipc
+format-font = 4
+; Default
+hook-0 = echo ""
+; When spotify active
+hook-1 = echo "   "
+click-left = "spotifyctl -q previous"
+
+
+[module/next]
+type = custom/ipc
+format-font = 4
+; Default
+hook-0 = echo ""
+; When spotify active
+hook-1 = echo " "
+click-left = "spotifyctl -q next"
+
+
+[module/playpause]
+type = custom/ipc
+format-font = 4
+; Default
+hook-0 = echo ""
+; Playing
+hook-1 = echo "  "
+; Paused
+hook-2 = echo "  "
+click-left = "spotifyctl playpause"
+
+
 [module/spotify]
-type = custom/script
-interval = 1
-format-prefix = " "
-format =  <label>
-exec = python ~/.config/polybar/spotify_status.py -f '{artist}: {song}'
-format-underline = #1db954
+type = custom/ipc
+; Default
+hook-0 = echo "" 
+; Playing/paused show song name and artist
+hook-1 = echo " " & spotifyctl -q status
+click-left = i3-msg '[class="Spotify"] focus'
 
 ; ------------------------ END OF MODULES ----------
 
