@@ -1,224 +1,242 @@
-acpi 1.7-2
-acpilight 1.2-1
-alsa-firmware 1.2.1-2
-alsa-utils 1.2.2-1
-arc-gtk-theme 20190917-1
-archlinux-themes-sddm 2.0-1
-autoconf 2.69-7
-autoconf-archive 1:2019.01.06-1
-automake 1.16.2-1
-base 2-2
-bat 0.13.0-1
-bind-tools 9.16.1-2
-bison 3.5.4-1
-blueberry 1.3.5-1
-bluez 5.54-1
-bluez-utils 5.54-1
-breeze-snow-cursor-theme 1.0-3
-byacc 20191103-1
-cava 0.6.1-1
-check 0.14.0-1
-chezmoi 1.7.19-1
-chromium-widevine 1:4.10.1610.0-1
-cmatrix 2.0-1
-compton-conf 0.14.1-1
-compton-tryone-git 0.1_beta2.95.g241bbc5-1
-consolas-font 1.1-1
-cronie 1.5.5-1
-deadd-notification-center-bin 1.7.2-1
-dejagnu 1.6.2-1
-deluge 2.0.4.dev23+g2f1c008a2-3
-discord 0.0.10-2
-dmenu 4.9-1
-docbook-xml 4.5-8
-docbook-xsl 1.79.2-5
-dolphin 19.12.3-1
-dotnet-runtime 3.1.3.sdk103.2-1
-dotnet-sdk-2.2 2.2.7.sdk109-1
-emacs 26.3-1
-expect 5.45.4-1
-fakeroot 1.24-2
-feh 3.3-2
-ffmpegthumbnailer 2.2.2-1
-firefox 75.0-1
-flatpak 1.7.2-1
-flex 2.6.4-3
-fzf 0.21.1-1
-gcc 9.3.0-1
-gdb 9.1-2
-geany 1.36-1
-git 2.26.0-1
-glib2-docs 2.64.1-1
-gnome-common 3.18.0-3
-gnome-tweaks 3.34.0-2
-gnu-netcat 0.7.1-7
-gobject-introspection 1.64.1-1
-google-chrome 81.0.4044.92-1
-gtk-doc 1.32+37+gefc3644-1
-gvfs 1.44.1-1
-hacked-aio-righty 1.0.0-1
-htop 2.2.0-3
-i3-gaps 4.18-1
-i3lock 2.12-1
-imagemagick 7.0.10.6-1
-inetutils 1.9.4-8
-intltool 0.51.0-4
-itstool 1:2.0.6-1
-iw 5.4-1
-java-runtime-common 3-2
-jre-openjdk 13.0.2.u8-1
-jre-openjdk-headless 13.0.2.u8-1
-kdb 3.2.0-2
-kitty 0.17.2-1
-libc++ 9.0.1-1
-libc++abi 9.0.1-1
-libconfig 1.7.2-2
-libdbusmenu-glib 16.04.0-4
-libnet 1.1.6-3
-linux 5.6.2.arch1-2
-linux-firmware 20200316.8eb0b28-1
-lxappearance 0.6.3-2
-maim 5.5.3-2
-make 4.3-1
-mallard-ducktype 1.0.2-3
-man-db 2.9.1-2
-man-pages 5.05-2
-meson 0.54.0-2
-monaco-powerline-font-git r16.616d338-3
-mono 6.4.0.198-1
-nano 4.9.1-1
-nasm 2.14.02-1
-nautilus 3.36.1.1-1
-ncdu 1.14.2-1
-neofetch 7.0.0-1
-nerd-fonts-complete 2.0.0-5
-netflix-qdesktop 0.91-1
-network-manager-applet 1.16.0-1
-networkmanager 1.22.10-1
-networkmanager-dmenu-git r103.d3e364a-1
-ninja 1.10.0-1
-nm-connection-editor 1.16.0-1
-npm 6.14.4-1
-ntfs-3g 2017.3.23-4
-numix-cursor-maia 1.0-1
-obs-studio 25.0.4-1
-openssh 8.2p1-3
-otf-font-awesome-5-free 5.10.2-1
-otf-overpass 3.0.4-1
-patch 2.7.6-8
-pavucontrol 1:4.0-1
-pfetch 0.6.0-1
-pkgconf 1.6.3-3
-polybar 3.4.2-2
-polybar-spotify-module 1.1.0-1
-pulseaudio 13.0-3
-pulseaudio-bluetooth 13.0-3
-pyside2 5.14.2-1
-python-anytree 2.8.0-1
-python-lxml 4.5.0-1
-python-markdown 3.1.1-4
-python-pip 20.0.2-1
-qt5-3d 5.14.2-1
-qt5-charts 5.14.2-1
-qt5-connectivity 5.14.2-1
-qt5-datavis3d 5.14.2-1
-qt5-doc 5.14.2-1
-qt5-examples 5.14.2-1
-qt5-gamepad 5.14.2-1
-qt5-imageformats 5.14.2-1
-qt5-location 5.14.2-1
-qt5-lottie 5.14.2-1
-qt5-multimedia 5.14.2-1
-qt5-networkauth 5.14.2-1
-qt5-purchasing 5.14.2-1
-qt5-quick3d 5.14.2-1
-qt5-quickcontrols 5.14.2-1
-qt5-remoteobjects 5.14.2-1
-qt5-script 5.14.2-1
-qt5-scxml 5.14.2-1
-qt5-sensors 5.14.2-1
-qt5-serialbus 5.14.2-1
-qt5-serialport 5.14.2-1
-qt5-speech 5.14.2-1
-qt5-styleplugins 5.0.0.20170311-20
-qt5-tools 5.14.2-1
-qt5-translations 5.14.2-1
-qt5-virtualkeyboard 5.14.2-1
-qt5-wayland 5.14.2-1
-qt5-webchannel 5.14.2-1
-qt5-webengine 5.14.2-1
-qt5-webglplugin 5.14.2-1
-qt5-websockets 5.14.2-1
-qt5-webview 5.14.2-1
-qt5-xmlpatterns 5.14.2-1
-qt5ct 0.41-2
-ranger 1.9.3-1
-raw-thumbnailer 0.2.1-4
-redshift 1.12-3
-refind-efi 0.11.3-1
-rider 1:2019.3.4-1
-rofi-git 1.5.4.r85.g825fe4ae-1
-rustup 1.21.1-4
-rxvt-unicode-pixbuf 9.22-2
-sardi-icons 20.2-2
-screenfetch 3.9.1-1
-sddm 0.18.1-2
-sddm-stellar-theme 0.1-2
-sddm-sugar-dark 1.2-1
-sdl 1.2.15-13
-spicetify-cli 0.9.7-1
-spicetify-themes-git r4.ae45f4d-1
-spotify 1:1.1.10.546-4
-sublime-text-dev 3.3211-1
-sudo 1.8.31.p1-1
-tcl 8.6.10-1
-teams 1.3.00.5153-1
-texinfo 6.7-2
-thefuck 3.30-1
-thunar 1.8.14-1
-thunar-volman 0.9.5-2
-tmux 3.0_a-1
-tree 1.8.0-1
-ttf-arphic-uming 0.2.20080216.1-7
-ttf-font-awesome 5.13.0-1
-ttf-font-awesome-4 4.7.0-5
-ttf-iosevka 2.3.3-1
-ttf-monaco 6.1-3
-ttf-nanum 2017-2
-ttf-roboto 2.138-1
-ufw 0.36-3
-unrar 1:5.9.2-1
-unzip 6.0-13
-urxvt-fullscreen 1-1
-vi 1:070224-4
-vim 8.2.0510-1
-vim-youcompleteme-git r2648.97150c0b-1
-visual-studio-code-bin 1.43.2-2
-vlc 3.0.8-13
-w3m 0.5.3.git20190105-1
-wget 1.20.3-2
-wireless_tools 30.pre9-3
-wxedid 0.0.19-1
-xclip 0.13-2
-xcursor-bluecurve 0.1.1-6
-xcursor-comix 0.9.0-3
-xcursor-flatbed 0.4-2
-xcursor-neutral 1.13a-8
-xcursor-pinux 0.3-12
-xcursor-premium 0.3-9
-xf86-video-intel 1:2.99.917+899+gf66d3954-1
-xfce4-terminal 0.8.9.2-1
-xorg-server 1.20.8-1
-xorg-xinit 1.4.1-1
-xorg-xinput 1.6.3-1
-xorg-xrdb 1.2.0-1
-xorg-xwininfo 1.1.5-1
-xterm 353-1
-yay 9.4.6-2
-yelp-tools 3.32.2-1
-yelp-xsl 3.36.0-1
-ytop-bin 0.6.0-1
-zathura 0.4.5-1
-zathura-pdf-mupdf 0.3.5-3
-zip 3.0-8
-zsh 5.8-1
+acpi
+acpilight
+alsa-firmware
+alsa-utils
+arc-gtk-theme
+autoconf
+autoconf-archive
+automake
+base
+bat
+bind
+bison
+blueberry
+blueman
+bluez
+bluez-alsa-git
+bluez-utils
+breeze-snow-cursor-theme
+byacc
+caprine
+cava
+check
+chezmoi
+chromium-widevine
+cmatrix
+compton-tryone-git
+consolas-font
+cowsay
+cronie
+deadd-notification-center-bin
+dejagnu
+deluge
+discord-canary
+docbook-xml
+docbook-xsl
+dolphin
+dotnet-runtime
+dotnet-sdk-2.2
+emacs
+expect
+fakeroot
+feh
+ffmpegthumbnailer
+flatpak
+flex
+fzf
+gcc
+gdb
+geany
+gimp
+git
+glib2-docs
+gnome-common
+gnome-tweaks
+gnu-netcat
+gobject-introspection
+google-chrome
+gparted
+gtk-doc
+gucharmap
+gvfs
+hacked-aio-righty
+htop
+i3-gaps
+i3lock
+imagemagick
+inetutils
+intltool
+itstool
+iw
+java-runtime-common
+jdk-openjdk
+jre-openjdk
+jre-openjdk-headless
+kdb
+kitty
+libc++
+libc++abi
+libconfig
+libdbusmenu-glib
+libnet
+lightdm
+lightdm-gtk-greeter
+lightdm-gtk-greeter-settings
+lightdm-webkit-theme-aether
+lightdm-webkit2-greeter
+lightdm-webkit2-theme-glorious
+linux
+linux-firmware
+lxappearance
+magic-wormhole
+maim
+make
+mallard-ducktype
+man-db
+man-pages
+meson
+mono
+nano
+nasm
+nautilus
+ncdu
+neofetch
+nerd-fonts-complete
+netflix-qdesktop
+network-manager-applet
+networkmanager
+networkmanager-dmenu-git
+ninja
+nm-connection-editor
+noto-fonts-emoji
+npm
+ntfs-3g
+ntp
+numix-cursor-maia
+obs-studio
+oneko
+openssh
+opera
+otf-font-awesome-5-free
+otf-overpass
+patch
+pavucontrol
+pkgconf
+polybar
+polybar-spotify-module
+pulseaudio
+pulseaudio-bluetooth
+pyside2
+python-anytree
+python-lxml
+python-markdown
+python-pip
+python-pre-commit
+qt5-3d
+qt5-charts
+qt5-connectivity
+qt5-datavis3d
+qt5-doc
+qt5-examples
+qt5-gamepad
+qt5-imageformats
+qt5-location
+qt5-lottie
+qt5-multimedia
+qt5-networkauth
+qt5-purchasing
+qt5-quick3d
+qt5-quickcontrols
+qt5-remoteobjects
+qt5-script
+qt5-scxml
+qt5-sensors
+qt5-serialbus
+qt5-serialport
+qt5-speech
+qt5-styleplugins
+qt5-tools
+qt5-translations
+qt5-virtualkeyboard
+qt5-wayland
+qt5-webchannel
+qt5-webengine
+qt5-webglplugin
+qt5-websockets
+qt5-webview
+qt5-xmlpatterns
+qt5ct
+ranger
+raw-thumbnailer
+redshift
+refind
+rofi-git
+rustup
+rxvt-unicode
+sardi-icons
+scrot
+sdl
+sdl2_image
+sdl2_ttf
+sdl_image
+sdl_ttf
+spicetify-cli
+spicetify-themes-git
+spotify
+sublime-text-dev
+sudo
+tcl
+teams
+texinfo
+thefuck
+thunar
+thunar-volman
+tmux
+tree
+ttf-arphic-uming
+ttf-dejavu
+ttf-droid
+ttf-font-awesome
+ttf-font-awesome-4
+ttf-hack
+ttf-iosevka
+ttf-monaco
+ttf-nanum
+ttf-roboto
+ufw
+unrar
+unzip
+urxvt-fullscreen
+vi
+vim
+visual-studio-code-bin
+vlc
+vulkan-intel
+w3m
+wget
+wireless_tools
+wxedid
+xclip
+xcursor-bluecurve
+xcursor-comix
+xcursor-flatbed
+xcursor-neutral
+xcursor-pinux
+xcursor-premium
+xf86-video-intel
+xfce4-terminal
+xinit-xsession
+xorg-server
+xorg-xinit
+xorg-xinput
+xorg-xrdb
+xorg-xwininfo
+xterm
+yay
+yelp-tools
+yelp-xsl
+ytop-bin
+zathura
+zathura-pdf-mupdf
+zip
+zsh

@@ -56,8 +56,28 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 modules-center = spotify previous playpause next
-modules-left = memory
-modules-right = xkeyboard
+modules-left = filesystem
+modules-right = pkg xkeyboard
+
+[module/filesystem]
+type = internal/fs
+
+format-mounted = <label-mounted>
+; Mountpoints to display
+mount-0 = /
+label-mounted = " %used%% / %total%"
+
+; Seconds to sleep between updates
+; Default: 30
+interval = 10
+
+; Display fixed precision values
+; Default: false
+fixed-values = true
+
+; Spacing between entries
+; Default: 2
+spacing = 4
 
 [module/i3]
 type = internal/i3
@@ -97,7 +117,7 @@ format-disconnected-foreground = ${colors.alert}
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-prefix = " "
+format-prefix = "  "
 
 label-layout = %layout%
 label-indicator-padding = 2
@@ -106,6 +126,7 @@ label-indicator-margin = 1
 [module/date]
 type = internal/date
 interval = 1
+#date = %a %d %b
 date = %A, %d %B %Y
 time = %H:%M:%S
 
@@ -153,17 +174,20 @@ label-charging = %percentage%%
 label-discharging = %percentage%%
 label-full = %percentage%%
 
-animation-charging-0 = ""
-animation-charging-1 = ""
-animation-charging-2 = ""
-animation-charging-3 = ""
-animation-charging-4 = ""
-animation-charging-framerate = 750
 
-ramp-capacity-0 = ""
-ramp-capacity-1 = ""
-ramp-capacity-2 = ""
-ramp-capacity-3 = ""
+animation-charging-0 = ""
+;animation-charging-0 = ""
+;animation-charging-1 = ""
+;animation-charging-2 = ""
+;animation-charging-3 = ""
+;animation-charging-4 = ""
+;animation-charging-framerate = 500
+
+ramp-capacity-0 = ""
+ramp-capacity-1 = ""
+ramp-capacity-2 = ""
+ramp-capacity-3 = ""
+ramp-capacity-4 = ""
 ;animation-discharging-1 = ""
 ;animation-discharging-0 = ""
 
@@ -199,6 +223,21 @@ interval = 2
 format = <label>
 label = " %gb_used% / %gb_total%"
 
+[module/pkg]
+type = custom/script
+interval = 1
+format = "<label>          "
+exec = sh ~/.config/polybar/updates.sh
+
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = " "
+format =  <label>
+exec = python ~/.config/polybar/spotify_status.py -f '{artist}: {song}'
+format-underline = #1db954
+click-left = i3-msg '[class="Spotify"] focus'
+
 [module/previous]
 type = custom/ipc
 format-font = 4
@@ -231,13 +270,13 @@ hook-2 = echo "  "
 click-left = "spotifyctl playpause"
 
 
-[module/spotify]
-type = custom/ipc
-; Default
-hook-0 = echo "" 
-; Playing/paused show song name and artist
-hook-1 = echo " " & spotifyctl -q status
-click-left = i3-msg '[class="Spotify"] focus'
+;[module/spotify]
+;type = custom/ipc
+;; Default
+;hook-0 = echo ""  
+;; Playing/paused show song name and artist
+;hook-1 = spotifyctl -q status
+;click-left = i3-msg '[class="Spotify"] focus'
 
 ; ------------------------ END OF MODULES ----------
 

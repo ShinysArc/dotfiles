@@ -1,5 +1,5 @@
 ####################################{ GAPS }####################################
-gaps inner 6
+gaps inner 5
 gaps top 0
 gaps right 0
 gaps bottom 0
@@ -18,6 +18,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+x exec "sh ~/.config/i3/powermenu.sh"
 bindsym $mod+p exec maim -o -s ~/Screens/$(date +%s).png
+bindsym $mod+Shift+p exec scrot ~/Screens/$(date +%s).png
 bindsym $mod+Delete exec "sh ~/.config/i3/i3lock_temp/matrixlock.sh"
 bindsym $mod+i exec kill -s USR1 $(pidof deadd-notification-center) 
 bindsym $mod+k exec "sh ~/.config/i3/toggle_keyboard.sh"
@@ -100,18 +101,11 @@ exec unclutter --timeout 1 --jitter 10 --ignore-scrolling &
 
 #############################{ SCRIPTS ON STARTUP }#############################
 exec compton --config ~/.config/compton/config --dbus
+#exec picom --config ~/.config/picom/picom.conf --dbus
 exec_always sh ~/.config/polybar/launch.sh
-#exec sh ~/Cronscripts/dbus.sh
-exec xinput set-prop 9 319 1
-exec xinput set-prop 9 311 1
-exec xinput set-prop 9 318 1
-exec xinput set-prop 9 310 1
-exec xinput set-prop 10 319 1
-exec xinput set-prop 10 327 1
-exec xinput set-prop 10 310 1
-exec xinput set-prop 10 326 1
+exec_always sh ~/.config/i3/touchpad_scripts.sh
 
-exec deadd-notification-center &
+exec deadd-notification-center
 exec --no-startup-id blueman-applet
 exec --no-startup-id nm-applet
 exec systemctl --user start spotify-listener
@@ -141,6 +135,7 @@ title_align center
 #exec_always feh --bg-scale ~/Downloads/bg.jpg
 exec_always feh --bg-scale ~/Downloads/96.png
 #exec_always feh --bg-scale ~/Downloads/128486-dark-anime-background-scenery-1920x1080-pictures.jpg
+#exec_always feh --bg-scale ~/Downloads/White-Wallpaper-2.jpg
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #005682 #005682 #ffffff #005682   #005682

@@ -8,7 +8,7 @@
  */
 
 configuration {
-    font:                           "Consolas 14";
+    font:                           "DejaVuSansMono 12";
     show-icons:                     true;
 	icon-theme: 					"Papirus";
     display-drun: 					"";
@@ -50,7 +50,7 @@ prompt {
 	padding: 						0px 8px 0px 4px;
 	background-color: 				@background;
 	text-color: 					@foreground;
-	font:							"Consolas 16";
+	font:							"DejaVuSansMono 14";
 }
 
 inputbar {

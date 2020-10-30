@@ -1,10 +1,10 @@
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.iso14755: False
 URxvt.perl-ext-common: default,clipboard,matcher,font-size
-URxvt*font: xft:Consolas:size=14, style=regular
-URxvt.boldFont: xft:Consolas:size=14, style=bold
-URxvt.letterSpace:-0.5
-URxvt*internalBorder: 14
+URxvt*font: xft:DejaVuSansMono:pixelsize=15,xft:Noto Emoji:pixelsize=15,xft:Everson Mono:pixelsize=15,xft:Symbola:size=10
+URxvt*boldFont: xft:DejaVuSansMono:pixelsize=15,xft:Noto Emoji:pixelsize=15,xft:Everson Mono:pixelsize=15,xft:Symbola:size=10
+URxvt.letterSpace: 0
+URxvt*internalBorder: 8
 URxvt*scrollBar: false
 URxvt*cursorBlink: true
 URxvt.url-launcher: usr/bin/xdg-open
