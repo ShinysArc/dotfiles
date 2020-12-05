@@ -14,7 +14,7 @@ This project is mainly for personal use, and allows me to easily create a new ma
 | CLI interpreter | Zsh |
 | Compositor | Picom |
 
-List of all installed packages: [pkglist.txt](https://github.com/ShinysArc/dotfiles/blob/Blue/pkglist.txt)
+List of all installed packages: [pkglist.txt](https://github.com/ShinysArc/dotfiles/blob/master/pkglist.txt)
 
 ## Getting started
 
@@ -111,5 +111,5 @@ cp -r dotfiles/.config/dunst/ $HOME/.config/
 
 ## Screenshots
 
-![screenshot0](https://github.com/ShinysArc/dotfiles/blob/Blue/screenshot0.png)
-![screenshot1](https://github.com/ShinysArc/dotfiles/blob/Blue/screenshot1.png)
+![screenshot0](https://github.com/ShinysArc/dotfiles/blob/master/screenshot0.png)
+![screenshot1](https://github.com/ShinysArc/dotfiles/blob/master/screenshot1.png)
