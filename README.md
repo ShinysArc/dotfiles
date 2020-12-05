@@ -14,6 +14,8 @@ This project is mainly for personal use, and allows me to easily create a new ma
 | CLI interpreter | Zsh |
 | Compositor | Picom |
 
+List of all installed packages: [pkglist.txt](https://github.com/ShinysArc/dotfiles/blob/Blue/pkglist.txt)
+
 ## Getting started
 
 1. **[Download Archlinux](https://www.archlinux.org/download/) and install it through the [installation guide](https://wiki.archlinux.org/index.php/installation_guide).**
@@ -100,3 +102,8 @@ sudo pacman -S lxappearance-gtk3 #To customize gtk related apps
 sudo pacman -S scrot maim #Allows you to take screenshots
 sudo pacman -S cmatrix #I use it in an i3lock script
 ```
+
+## Screenshots
+
+![screenshot0](https://github.com/ShinysArc/dotfiles/blob/Blue/screenshot0.png)
+![screenshot1](https://github.com/ShinysArc/dotfiles/blob/Blue/screenshot1.png)
