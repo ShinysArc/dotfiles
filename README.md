@@ -103,6 +103,12 @@ sudo pacman -S scrot maim #Allows you to take screenshots
 sudo pacman -S cmatrix #I use it in an i3lock script
 ```
 
+12. **Add a notification manager, such as [Dunst](https://wiki.archlinux.org/index.php/Dunst).** My configuration file can be found in the config folder.
+```bash
+sudo pacman -S dunst
+cp -r dotfiles/.config/dunst/ $HOME/.config/
+```
+
 ## Screenshots
 
 ![screenshot0](https://github.com/ShinysArc/dotfiles/blob/Blue/screenshot0.png)
