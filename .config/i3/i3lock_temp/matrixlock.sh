@@ -1,8 +1,6 @@
 #!/bin/bash
 
-kitty -e cmatrix &
+kitty -e cmatrix -B &
 sleep 0.3
-
-#i3-msg fullscreen
 
 i3lock -n; i3-msg kill

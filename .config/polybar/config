@@ -1,5 +1,5 @@
 [colors]
-background = "#601d1f21"
+background = "#601d1f49"
 foreground = "${xrdb:foreground}"
 primary = "${xrdb:color4}"
 alert = "ff0000"
@@ -9,7 +9,7 @@ width = 100%
 height = 35
 offset-y = 0
 offset-x = 0
-radius = 0.0
+;radius = 10.0
 fixed-center = true
 override-redirect = false
 background = ${colors.background}
@@ -18,22 +18,24 @@ foreground = ${colors.foreground}
 border-size = 0
 border-color = #00000000
 
-padding-left = 4
-padding-right = 4
+padding-left = 3
+padding-right = 3
 
-module-margin-left = 4
-module-margin-right = 4
+module-margin-left = 3
+module-margin-right = 3
 
 font-0 = Iosevka:style=bold:size=11.5
 font-1 = Font Awesome:style=Regular:size=12.5
+font-2 = Weather Icons:size=12;1
 
 modules-left = i3 cpu temperature
 modules-center = date
-modules-right = network volume battery
+;modules-right = weather network volume battery
+modules-right = weather volume battery
 
-tray-position = none
-tray-padding = 4
-tray-maxsize = 0
+tray-position = right
+tray-padding = 10
+tray-maxsize = 24
 
 [bar/bottombar]
 margin-top = 5
@@ -44,10 +46,8 @@ height = 24
 spacing = 1
 enable-ipc = true
 
-font-0 = Iosevka:style=bold:size=10
-font-1 = "Iosevka Nerd Font:antialias=true:size=11"
-font-2 = Nanum:style=bold:size=10
-font-3 = Font Awesome 5 Free:size=11;1
+font-0 = "Iosevka Nerd Font:style=bold:size=11"
+font-1 = Font Awesome:size=11;1
 dpi-x = 0
 dpi-y = 0
 
@@ -57,7 +57,7 @@ foreground = ${colors.foreground}
 
 modules-center = spotify previous playpause next
 modules-left = filesystem
-modules-right = pkg xkeyboard
+modules-right = pkg keyboard_speed xkeyboard
 
 [module/filesystem]
 type = internal/fs
@@ -65,11 +65,11 @@ type = internal/fs
 format-mounted = <label-mounted>
 ; Mountpoints to display
 mount-0 = /
-label-mounted = " %used%% / %total%"
+label-mounted = " %used% / %total%"
 
 ; Seconds to sleep between updates
 ; Default: 30
-interval = 10
+interval = 30
 
 ; Display fixed precision values
 ; Default: false
@@ -78,6 +78,18 @@ fixed-values = true
 ; Spacing between entries
 ; Default: 2
 spacing = 4
+
+[module/date]
+type = custom/script
+exec = ~/.config/polybar/popup_calendar.sh
+interval = 1
+click-left = ~/.config/polybar/popup_calendar.sh --popup &
+
+[module/weather]
+type = custom/script
+exec = ~/.config/polybar/weather.sh
+interval = 300
+label-font = 3
 
 [module/i3]
 type = internal/i3
@@ -92,7 +104,7 @@ label-unfocused = %index%
 
 label-visible = %index%
 
-label-separator = .
+label-separator = . 
 label-separator-padding = 1
 label-separator-foreground = ${colors.background}
 
@@ -107,8 +119,8 @@ format-padding = 1
 type = internal/network
 interface = wlo1
 interval = 3.0
-format-connected = <label-connected> 
-label-connected = %{A1:networkmanager_dmenu:} %downspeed%  %upspeed% | %essid%%{A}
+format-connected = <label-connected>
+label-connected = %{A1:networkmanager_dmenu:} %essid%%{A}
 
 format-disconnected = 
 format-disconnected-foreground = ${colors.alert}
@@ -117,23 +129,16 @@ format-disconnected-foreground = ${colors.alert}
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-prefix = "  "
+format-prefix = "            "
 
 label-layout = %layout%
 label-indicator-padding = 2
 label-indicator-margin = 1
 
-[module/date]
-type = internal/date
-interval = 1
-#date = %a %d %b
-date = %A, %d %B %Y
-time = %H:%M:%S
-
-#format-prefix = " "
-format-padding = 2
-
-label = %date% %time%
+[module/keyboard_speed]
+type = custom/script
+exec = ~/.config/polybar/kb_speed.sh
+tail = true
 
 [module/temperature]
 type = internal/temperature
@@ -225,7 +230,7 @@ label = " %gb_used% / %gb_total%"
 
 [module/pkg]
 type = custom/script
-interval = 1
+interval = 300
 format = "<label>          "
 exec = sh ~/.config/polybar/updates.sh
 
@@ -244,7 +249,7 @@ format-font = 4
 ; Default
 hook-0 = echo ""
 ; When spotify active
-hook-1 = echo "   "
+hook-1 = echo "  "
 click-left = "spotifyctl -q previous"
 
 
@@ -254,7 +259,7 @@ format-font = 4
 ; Default
 hook-0 = echo ""
 ; When spotify active
-hook-1 = echo " "
+hook-1 = echo ""
 click-left = "spotifyctl -q next"
 
 
@@ -264,7 +269,7 @@ format-font = 4
 ; Default
 hook-0 = echo ""
 ; Playing
-hook-1 = echo "  "
+hook-1 = echo "   "
 ; Paused
 hook-2 = echo "  "
 click-left = "spotifyctl playpause"

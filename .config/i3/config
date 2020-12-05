@@ -13,14 +13,15 @@ font pango:Consolas 11
 set $mod Mod4
 bindsym $mod+Shift+a kill
 bindsym $mod+d exec "sh ~/.config/rofi/launchers/launcher.sh"
+bindsym $mod+t exec thunar
 bindsym $mod+f fullscreen toggle
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+x exec "sh ~/.config/i3/powermenu.sh"
-bindsym $mod+p exec maim -o -s ~/Screens/$(date +%s).png
-bindsym $mod+Shift+p exec scrot ~/Screens/$(date +%s).png
+bindsym $mod+x exec "sh ~/.config/rofi/power/powermenu.sh"
+bindsym $mod+q exec "sh ~/.config/rofi/quicklink.sh"
+bindsym $mod+p exec maim -o -s ~/Pictures/Screenshots/$(date +%s).png
+bindsym $mod+Shift+p exec scrot ~/Pictures/Screenshots/$(date +%s).png
 bindsym $mod+Delete exec "sh ~/.config/i3/i3lock_temp/matrixlock.sh"
-bindsym $mod+i exec kill -s USR1 $(pidof deadd-notification-center) 
 bindsym $mod+k exec "sh ~/.config/i3/toggle_keyboard.sh"
 
 ################################{ APP SHORTCUTS }###############################
@@ -29,6 +30,7 @@ bindsym $mod+Shift+Return exec urxvt -name floating
 for_window [instance="floating"] floating enable
 for_window [class="^.*"] border pixel 0
 for_window [class="kitty"] fullscreen enable
+for_window [class="Yad" title="yad-calendar"] floating enable
 
 ###################################{ FOCUS }####################################
 bindsym $mod+Left focus left
@@ -100,14 +102,13 @@ floating_modifier $mod
 exec unclutter --timeout 1 --jitter 10 --ignore-scrolling &
 
 #############################{ SCRIPTS ON STARTUP }#############################
-exec compton --config ~/.config/compton/config --dbus
-#exec picom --config ~/.config/picom/picom.conf --dbus
+exec picom --experimental-backends --config ~/.config/picom/picom.conf
 exec_always sh ~/.config/polybar/launch.sh
 exec_always sh ~/.config/i3/touchpad_scripts.sh
 
-exec deadd-notification-center
-exec --no-startup-id blueman-applet
+exec sh ~/.config/i3/pulseaudio_start.sh
 exec --no-startup-id nm-applet
+exec_aways --no-startup-id dunst -config ~/.config/dunst/dunstrc
 exec systemctl --user start spotify-listener
 
 #################################{ SCRATCHPAD }#################################
@@ -128,14 +129,11 @@ mode "resize" {
 }
 
 #################################{ APPEARANCE }#################################
+exec_always feh --bg-scale ~/Pictures/johnny_joestar.jpg
 default_border normal 2
 default_floating_border none
 hide_edge_borders none
 title_align center
-#exec_always feh --bg-scale ~/Downloads/bg.jpg
-exec_always feh --bg-scale ~/Downloads/96.png
-#exec_always feh --bg-scale ~/Downloads/128486-dark-anime-background-scenery-1920x1080-pictures.jpg
-#exec_always feh --bg-scale ~/Downloads/White-Wallpaper-2.jpg
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #005682 #005682 #ffffff #005682   #005682

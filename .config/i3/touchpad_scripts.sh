@@ -17,7 +17,7 @@ s3=$(xinput list-props $id | grep -i "natural")
 [[ $s3 =~ [0-9]+ ]]
 prop2="${BASH_REMATCH[0]}"
 
-# Enable touchpad tapping
+# Enable touchpad props
 xinput set-prop $id $prop1 1
 xinput set-prop $id $prop2 1
 

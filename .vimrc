@@ -26,6 +26,14 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
+Plugin 'preservim/nerdtree'
+
+Plugin 'lervag/vimtex'
+let g:tex_flavor = "latex"
+
+Plugin 'arcticicestudio/nord-vim'
+Plugin 'dracula/vim', { 'name': 'dracula' }
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -40,6 +48,12 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+
+map <C-t> :NERDTreeToggle<CR>
+map <C-l> :VimtexCompile<CR>
+
+color dracula
+autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
 
 if has("syntax")
     syntax on
